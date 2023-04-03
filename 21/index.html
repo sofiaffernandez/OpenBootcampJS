@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Mapa con chinchetas</title>
+    <meta name="viewport" content="initial-scale=1.0">
+    <meta charset="utf-8">
+    <style>
+      /* Estilos para el contenedor del mapa */
+      #map {
+        height: 400px;
+        width: 100%;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="map"></div>
+    <script src="https://maps.googleapis.com/maps/api/js?key"></script>
+    <script>
+      // Inicializamos el mapa
+      function initMap() {
+        // Creamos un objeto mapa y lo asignamos al contenedor con id "map"
+        var map = new google.maps.Map(document.getElementById('map'), {
+          zoom: 5, // Nivel de zoom inicial
+          center: {lat: 40.4168, lng: -3.7038} // Coordenadas iniciales del centro del mapa
+        });
+
+        // Añadimos una chincheta en Barreiros
+        var markerBarreiros = new google.maps.Marker({
+          position: {lat: 43.5408, lng: -7.0582},
+          map: map,
+          title: 'Barreiros'
+        });
+
+        // Añadimos una chincheta en Madrid
+        var markerMadrid = new google.maps.Marker({
+          position: {lat: 40.4168, lng: -3.7038},
+          map: map,
+          title: 'Madrid'
+        });
+
+        // Añadimos una chincheta en Barcelona
+        var markerBarcelona = new google.maps.Marker({
+          position: {lat: 41.3851, lng: 2.1734},
+          map: map,
+          title: 'Barcelona'
+        });
+      }
+    </script>
+    <script async defer src="https://maps.googleapis.com/maps/api/js?key=API_KEY&callback=initMap"></script>
+  </body>
+</html>
